@@ -2,6 +2,7 @@
 # Use a valid Ubuntu base image (e.g., Ubuntu 20.04)
 FROM ubuntu:22.04
 
+RUN mkdir /woowa
 # Update package lists and upgrade installed packages, then install wget
 RUN apt update && apt upgrade -y && apt install -y wget
 

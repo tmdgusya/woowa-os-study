@@ -43,7 +43,7 @@ func buildWoowaOs() {
 
 func runWoowaOS() {
 	log.Print("run docker image with some arguments")
-	executeCmd := exec.Command("/bin/sh", "-c", "docker run -dit woowa/os")
+	executeCmd := exec.Command("/bin/sh", "-c", "docker run -dit -v ./woowa:/woowa woowa/os")
 	output := executeShell(executeCmd)
 	log.Printf("docker run sucessfully %s", string(output))
 }
