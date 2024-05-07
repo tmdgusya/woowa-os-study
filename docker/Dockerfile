@@ -9,6 +9,15 @@ RUN apt update && apt upgrade -y && apt install -y wget
 # Downlaod python3
 RUN apt install -y python3
 
+# Donwload strace for monitoring system call
+RUN apt install -y strace
+
+# Download sysstat to check the amount of time used for system calls
+RUN apt install -y sysstat
+
+# This one install a C compilter as well as other tools that we may need to build something
+RUN apt install -y build-essential
+
 # Download and install Go
 ENV GO_VERSION=1.21.4
 RUN wget https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz -O go.tar.gz \
